@@ -1,0 +1,110 @@
+<ion-content [fullscreen]="true" color="light">
+
+  <ion-header>
+    <ion-toolbar 
+      [style.--background]="'url(\'../../../../assets/imgs/' + job?.image + '\') no-repeat center center/cover'">
+      <ion-buttons slot="start">
+        <ion-thumbnail class="menu">
+          <ion-back-button mode="md" defaultHref="/tabs/home"></ion-back-button>
+        </ion-thumbnail>
+      </ion-buttons>
+    </ion-toolbar>
+  </ion-header>
+
+  <ion-list lines="none">
+
+    <ion-item>
+      <ion-label>
+        {{job?.post}}
+        <p>
+          {{job?.salary}}
+          <ion-chip>
+            {{job?.type}}
+          </ion-chip>
+        </p>
+      </ion-label>
+    </ion-item>
+  
+    <ion-item>
+      <ion-thumbnail slot="start">
+        <img [src]="'assets/imgs/' + job?.logo_light">
+      </ion-thumbnail>
+      <ion-label class="company">
+        {{job?.company}}
+        <p>
+          <ion-text color="medium">
+            {{job?.location}}
+          </ion-text>
+        </p>
+      </ion-label>
+      <ion-text slot="end">
+        4 Days Left
+      </ion-text>
+    </ion-item>
+
+  </ion-list>
+
+  <ion-row>
+    <ion-segment [value]="segment_value" (ionChange)="changeSegment($event)" mode="ios">
+      <ion-segment-button value="description">
+        <ion-label>Description</ion-label>
+      </ion-segment-button>
+      <ion-segment-button value="company">
+        <ion-label>Company</ion-label>
+      </ion-segment-button>
+      <ion-segment-button value="reviews">
+        <ion-label>Reviews</ion-label>
+      </ion-segment-button>
+    </ion-segment>
+  </ion-row>
+
+  @if (segment_value == 'description') {
+    <ion-row class="ion-margin-bottom desc">
+      <ion-col size="12">
+        <ion-label>Qualifications</ion-label>
+      </ion-col>
+      @if (job?.description?.length > 0) {
+        <ul>
+          @for (desc of job.description; track $index) {
+            <li>
+              <ion-text color="medium">{{desc}}</ion-text>
+            </li>
+          }
+        </ul>
+      }
+    </ion-row>
+  
+    <ion-row class="ion-margin-bottom desc">
+      <ion-col size="12">
+        <ion-label>About the Job</ion-label>
+      </ion-col>
+      @if (job?.description?.length > 0) {
+        <ul>
+          @for (desc of job.description; track $index) {
+            <li>
+              <ion-text color="medium">{{desc}}</ion-text>
+            </li>
+          }
+        </ul>
+      }
+    </ion-row>
+  }
+
+</ion-content>
+
+<ion-footer>
+  <ion-toolbar>
+    <ion-row>
+      <ion-col size="2">
+        <ion-button color="light" (click)="toggleBookmark()">
+          <ion-icon [name]="bookmark ? 'bookmark' : 'bookmark-outline'"></ion-icon>
+        </ion-button>
+      </ion-col>
+      <ion-col size="10">
+        <ion-button expand="block">
+          <ion-text color="light">Apply Now</ion-text>
+        </ion-button>
+      </ion-col>
+    </ion-row>
+  </ion-toolbar>
+</ion-footer>

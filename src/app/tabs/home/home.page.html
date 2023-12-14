@@ -1,0 +1,118 @@
+<ion-content [fullscreen]="true" color="light">
+
+  <ion-header class="ion-no-border">
+    <ion-toolbar color="light" class="ion-padding-vertical">
+
+      <ion-title mode="ios">
+        <img [src]="'assets/imgs/logo.png'">
+      </ion-title>
+
+      <ion-buttons slot="start">
+        <ion-thumbnail>
+          <ion-icon name="apps-outline"></ion-icon>
+        </ion-thumbnail>
+      </ion-buttons>
+
+      <ion-buttons slot="end">
+        <ion-thumbnail>
+          <img src="assets/imgs/avatar.png">
+        </ion-thumbnail>
+      </ion-buttons>
+
+    </ion-toolbar>
+  </ion-header>
+
+  <ion-row class="tagline">
+    <ion-col>
+      <ion-label>
+        <ion-text>
+          Find Your
+        </ion-text>
+        <p>
+          <ion-text color="dark">
+            Creative Job
+          </ion-text>
+        </p>
+      </ion-label>
+    </ion-col>
+  </ion-row>
+
+  <ion-row class="srch">
+    <ion-col size="10">
+      <ion-searchbar class="srchBar" placeholder="Search For Jobs"></ion-searchbar>
+    </ion-col>
+    <ion-col size="2">
+      <ion-button mode="ios">
+        <ion-icon name="options"></ion-icon>
+      </ion-button>
+    </ion-col>
+  </ion-row>
+
+  @if (popular.length > 0) { 
+    <ion-list lines="none">
+
+      <ion-list-header>
+        <ion-label>
+          Popular Jobs
+        </ion-label>
+        <ion-button fill="clear" size="small" color="medium">
+          <ion-text>
+            Show all
+          </ion-text>
+        </ion-button>
+      </ion-list-header>  
+  
+      <div>
+        <swiper-container
+          [modules]="swiperModules"
+          [slidesPerView]="1.4"
+          [keyboard]="true"
+          [centerSlides]="true">
+          @for (job of popular; track job.id) {
+            <swiper-slide>
+              <app-job [job]="job" [routerLink]="['/', 'tabs', 'job', job.id]"></app-job>
+            </swiper-slide>
+          }
+        </swiper-container>
+      </div>
+
+    </ion-list>
+  }
+
+  @if (recent.length > 0) { 
+    <ion-list lines="none" class="ion-margin-bottom recentJobs">
+
+      <ion-list-header class="ion-margin-bottom">
+        <ion-label>
+          Recent Jobs
+        </ion-label>
+        <ion-button fill="clear" size="small" color="medium">
+          <ion-text>
+            Show all
+          </ion-text>
+        </ion-button>
+      </ion-list-header> 
+
+      @for (job of recent; track job.id) {
+        <ion-item class="ion-margin-bottom" [routerLink]="['/', 'tabs', 'job', job.id]">
+          <ion-thumbnail slot="start">
+            <img [src]="'assets/imgs/' + job?.logo_light">
+          </ion-thumbnail>
+          <ion-label class="recent">
+            {{job?.post}}
+            <p>
+              {{job?.company}} 
+              <span class="dot"></span>
+              {{job?.type}}
+            </p>
+          </ion-label>
+          <ion-text slot="end" color="dark">
+            4d Left
+          </ion-text>
+        </ion-item>
+      }
+
+    </ion-list>
+  }
+
+</ion-content>

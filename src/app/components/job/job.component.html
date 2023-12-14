@@ -1,0 +1,39 @@
+<ion-card>
+
+  <ion-list lines="none">
+
+    <ion-item class="ion-margin-bottom" color="primary">
+      <ion-label>
+        {{job?.post}}
+        <p>
+          {{job?.salary}}
+          <ion-chip color="light">
+            {{job?.type}}
+          </ion-chip>
+        </p>
+      </ion-label>
+      <ion-button slot="end" fill="clear" color="medium">
+        <ion-icon name="bookmark"></ion-icon>
+      </ion-button>
+    </ion-item>
+
+    <ion-item color="primary">
+      <ion-thumbnail slot="start">
+        <img [src]="'assets/imgs/' + job?.logo_dark">
+      </ion-thumbnail>
+      <ion-label class="company">
+        {{job?.company}}
+        <p>
+          <ion-text color="medium">
+            {{job?.location}}
+          </ion-text>
+        </p>
+      </ion-label>
+      <ion-text slot="end" color="light">
+        4 Days Left
+      </ion-text>
+    </ion-item>
+    
+  </ion-list>
+
+</ion-card>

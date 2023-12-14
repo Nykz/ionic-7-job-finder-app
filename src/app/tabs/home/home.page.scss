@@ -1,0 +1,111 @@
+ion-header {
+    ion-toolbar {
+        --padding-start: 1.5vh;
+        --padding-end: 1.5vh;
+        ion-title {
+          img {
+            height: 6vh;
+            width: 6vh;
+          }
+        }
+        ion-buttons {
+            ion-thumbnail {
+                background-color: #fff;
+                --border-radius: 10px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                ion-icon {
+                    font-size: 1.5rem;
+                }
+                img {
+                    width: 80%;
+                    height: 80%;
+                }
+            }
+        }
+    }
+}
+
+ion-row.tagline {
+    padding-left: 1.5vh;
+    ion-text {
+      font-size: 2rem;
+      font-weight: 800;
+    }
+}
+
+ion-row.srch {
+  padding-right: 1.5vh;
+  align-items: center;
+  ion-searchbar {
+    --background: #fff;
+    --border-radius: 10px;
+  }
+}
+
+ion-list {
+    background: transparent;
+    ion-list-header {
+      padding-right: 1vh;
+      ion-label {
+        font-size: 1.1rem;
+      }
+      ion-button {
+        ion-text {
+          font-size: 0.7rem;
+        }
+      }
+    }
+
+    ion-thumbnail {
+        height: 4vh;
+        width: 4vh;
+        background-color: var(--ion-color-dark);
+        border-radius: 5px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        img {
+          height: 70%;
+          width: 70%;
+        }
+    }
+    ion-label.recent {
+        font-size: 0.95rem;
+        font-weight: bold;
+        p {
+            margin-top: 5px;
+            font-size: 0.65rem;
+            font-weight: 600;
+        }
+    }
+    
+      ion-text[slot="end"] {
+        font-size: 0.65rem;
+        font-weight: 500;
+        align-self: end;
+        margin-bottom: 0.8vh;
+    }
+}
+
+ion-list.recentJobs {
+    ion-item {
+      margin-left: 1.5vh;
+      margin-right: 1.5vh;
+      border-radius: 10px;
+      ion-label {
+        margin-top: 1.5vh;
+        margin-bottom: 1.5vh;
+      }
+    }
+}
+
+span.dot {
+    margin: 0 2px 2px 2px;
+    height: 3px;
+    width: 3px;
+    background-color: dimgray;
+    border-radius: 50%;
+    display: inline-block;
+}

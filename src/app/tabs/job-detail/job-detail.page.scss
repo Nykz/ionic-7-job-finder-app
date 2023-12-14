@@ -1,0 +1,118 @@
+ion-content {
+    ion-header {
+        ion-toolbar {
+            height: 30vh;
+            // --background: url('../../../../assets/imgs/ux.jpg') no-repeat center center/cover;
+            ion-buttons {
+                margin: 2vh 1.5vh;
+                ion-thumbnail {
+                    background-color: #fff;
+                    border: 1px solid var(--ion-color-medium);
+                    --border-radius: 10px;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    ion-icon {
+                    font-size: 1.5rem;
+                    }
+                }
+            }
+        }
+    }
+
+    ion-list {
+        border-bottom-left-radius: 20px;
+        border-bottom-right-radius: 20px;
+        padding: 1.5vh;
+        ion-item {
+            ion-label {
+                font-size: 1.7rem;
+                font-weight: 800;
+                p {
+                    font-size: 0.65rem;
+                    margin-top: 5px;
+                    font-weight: 500;
+                    ion-chip {
+                        font-size: 0.65rem;
+                        border-radius: 8px;
+                        font-weight: 500;
+                        min-height: 0;
+                        padding: 4px 8px;
+                        margin-left: 10px;
+                    }
+                }
+            }
+            ion-thumbnail {
+                height: 4vh;
+                width: 4vh;
+                background-color: var(--ion-color-dark);
+                --border-radius: 5px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                img {
+                  height: 80%;
+                  width: 80%;
+                }
+            }
+            ion-label.company {
+                font-size: 0.8rem;
+                font-weight: 500;
+                p {
+                    margin-top: 3px;
+                    ion-text {
+                        font-size: 0.65rem;
+                    }
+                }
+            }
+            ion-text {
+                font-size: 0.65rem;
+                font-weight: 500;
+            }
+        }
+    }
+
+    ion-row {
+        margin: 1.5vh;
+        ion-segment {
+            --background: var(--ion-color-light);
+            ion-segment-button {
+                margin: 10px;
+                --background: #fff;
+                --border-color: var(--ion-color-light);
+                --indicator-color: var(--ion-color-primary);
+                --color: var(--ion-color-primary);
+                --color-checked: var(--ion-color-light);
+                --border-radius: 5px;
+                ion-label {
+                    font-size: 0.75rem;
+                    font-weight: 500;
+                }
+            }
+        }
+    }
+
+    ion-row.desc {
+        margin: 0 2.5vh 1.5vh 2.5vh;
+        background-color: #fff;
+        border-radius: 10px;
+        padding: 10px;
+        ion-label {
+            font-size: 0.95rem;
+            font-weight: 800;
+        }
+        ul {
+            padding-left: 20px;
+        }
+        ion-text {
+            font-size: 0.7rem;
+            font-weight: bold;
+        }
+    }
+}
+
+ion-footer {
+    ion-toolbar {
+        --background: #fff;
+    }
+}
